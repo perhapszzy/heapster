@@ -1,8 +1,8 @@
 {
   "dashboard":
   {
-    "title": "Kubernetes Cluster",
-    "originalTitle": "Kubernetes Cluster",
+    "title": "集群内存，CPU，硬盘使用情况",
+    "originalTitle": "集群内存，CPU，硬盘使用情况",
     "tags": [],
     "style": "dark",
     "timezone": "browser",
@@ -16,7 +16,7 @@
         "height": "100px",
         "panels": [
           {
-            "content": "#### This dashboard displays Memory, CPU and Disk metrics at both cluster and node levels. Select a node from the above dropdown to see metrics specific to that node. Select \"All\" to see metrics for all nodes side by side.\n\n##### * Cluster metrics are sum across all nodes.\n##### * Node metrics are displayed on one panel for easy comparison.\n##### * There's also a panel for each node so one could \"double-click\" into the node for further analysis.\n",
+            "content": "#### 此面板监视整个集群和集群中每个节点的Memory, CPU和Disk信息。在上面的下拉菜单中选取一个节点即可显示关于这个节点的监测信息。选择 \"All\" 可以比较每个节点的信息。\n\n##### * 集群数据是所有节点数据的和。\n##### * 每个节点的信息都集中显示在一个图表中。\n##### * 双击一个节点可以显示这个节点的更多信息。\n",
             "editable": true,
             "error": false,
             "id": 23,
@@ -30,7 +30,7 @@
           }
         ],
         "showTitle": true,
-        "title": "Documentation"
+        "title": "提示"
       },
       {
         "collapse": false,
@@ -96,7 +96,7 @@
             "steppedLine": false,
             "targets": [
               {
-                "alias": "Limit",
+                "alias": "配额",
                 "fields": [
                   {
                     "func": "sum",
@@ -120,7 +120,7 @@
                 ]
               },
               {
-                "alias": "Usage",
+                "alias": "使用",
                 "fields": [
                   {
                     "func": "last",
@@ -144,7 +144,7 @@
                 ]
               },
               {
-                "alias": "Working Set",
+                "alias": "工作集",
                 "fields": [
                   {
                     "func": "last",
@@ -185,7 +185,7 @@
           }
         ],
         "showTitle": true,
-        "title": "Overall Cluster Memory Usage"
+        "title": "集群内存使用"
       },
       {
         "collapse": false,
@@ -251,7 +251,7 @@
             "steppedLine": false,
             "targets": [
               {
-                "alias": "",
+                "alias": "$tag_hostname内存配额",
                 "fields": [
                   {
                     "func": "mean",
@@ -272,7 +272,7 @@
                 ]
               },
               {
-                "alias": "",
+                "alias": "$tag_hostname内存工作集",
                 "fields": [
                   {
                     "func": "mean",
@@ -310,7 +310,7 @@
           }
         ],
         "showTitle": true,
-        "title": "Memory Usage Group By Node"
+        "title": "节点内存使用"
       },
       {
         "collapse": false,
@@ -376,7 +376,7 @@
             "steppedLine": false,
             "targets": [
               {
-                "alias": "Limit",
+                "alias": "配额",
                 "fields": [
                   {
                     "func": "last",
@@ -399,7 +399,7 @@
                 ]
               },
               {
-                "alias": "Usage",
+                "alias": "使用",
                 "fields": [
                   {
                     "func": "last",
@@ -422,7 +422,7 @@
                 ]
               },
               {
-                "alias": "Working Set",
+                "alias": "工作集",
                 "fields": [
                   {
                     "func": "last",
@@ -447,7 +447,7 @@
             ],
             "timeFrom": null,
             "timeShift": null,
-            "title": "$node Memory Usage",
+            "title": "$node内存使用",
             "tooltip": {
               "shared": true,
               "value_type": "cumulative"
@@ -465,7 +465,7 @@
         "scopedVars": {
         },
         "showTitle": true,
-        "title": "Individual Node Memory Usage"
+        "title": "单个节点内存使用"
       },
       {
         "collapse": false,
@@ -513,7 +513,7 @@
             "renderer": "flot",
             "seriesOverrides": [
               {
-                "alias": "usage",
+                "alias": "使用",
                 "yaxis": 2
               }
             ],
@@ -522,7 +522,7 @@
             "steppedLine": false,
             "targets": [
               {
-                "alias": "",
+                "alias": "$tag_hostname内存配额",
                 "fields": [
                   {
                     "func": "mean",
@@ -543,7 +543,7 @@
                 ]
               },
               {
-                "alias": "",
+                "alias": "$tag_hostname内存使用",
                 "fields": [
                   {
                     "func": "derivative",
@@ -585,7 +585,7 @@
           }
         ],
         "showTitle": true,
-        "title": "CPU Usage Group By Node"
+        "title": "节点CPU使用"
       },
       {
         "collapse": false,
@@ -637,7 +637,7 @@
             },
             "seriesOverrides": [
               {
-                "alias": "usage",
+                "alias": "使用",
                 "yaxis": 2
               }
             ],
@@ -646,7 +646,7 @@
             "steppedLine": false,
             "targets": [
               {
-                "alias": "Limit",
+                "alias": "配额",
                 "fields": [
                   {
                     "func": "mean",
@@ -670,7 +670,7 @@
                 ]
               },
               {
-                "alias": "Usage",
+                "alias": "使用",
                 "fields": [
                   {
                     "func": "derivative",
@@ -697,7 +697,7 @@
             ],
             "timeFrom": null,
             "timeShift": null,
-            "title": "$node CPU Usage",
+            "title": "$node CPU使用",
             "tooltip": {
               "shared": true,
               "value_type": "cumulative"
@@ -712,7 +712,7 @@
           }
         ],
         "showTitle": true,
-        "title": "Individual Node CPU Usage"
+        "title": "单个节点CPU使用"
       },
       {
         "collapse": false,
@@ -772,7 +772,7 @@
             "steppedLine": false,
             "targets": [
               {
-                "alias": "Limit",
+                "alias": "配额",
                 "fields": [
                   {
                     "func": "mean",
@@ -785,7 +785,7 @@
                 "tags": []
               },
               {
-                "alias": "Usage",
+                "alias": "使用",
                 "fields": [
                   {
                     "func": "mean",
@@ -815,7 +815,7 @@
           }
         ],
         "showTitle": true,
-        "title": "Overall Cluster Disk Usage"
+        "title": "集群硬盘使用"
       },
       {
         "collapse": false,
@@ -875,7 +875,7 @@
             "steppedLine": false,
             "targets": [
               {
-                "alias": "",
+                "alias": "$tag_hostname硬盘配额",
                 "fields": [
                   {
                     "func": "mean",
@@ -896,7 +896,7 @@
                 ]
               },
               {
-                "alias": "",
+                "alias": "$tag_hostname硬盘使用",
                 "fields": [
                   {
                     "func": "mean",
@@ -934,7 +934,7 @@
           }
         ],
         "showTitle": true,
-        "title": "Disk Usage Group By Node"
+        "title": "节点硬盘使用"
       },
       {
         "collapse": false,
@@ -994,7 +994,7 @@
             "steppedLine": false,
             "targets": [
               {
-                "alias": "Limit",
+                "alias": "配额",
                 "fields": [
                   {
                     "func": "mean",
@@ -1007,7 +1007,7 @@
                 "tags": []
               },
               {
-                "alias": "Usage",
+                "alias": "使用",
                 "fields": [
                   {
                     "func": "mean",
@@ -1022,7 +1022,7 @@
             ],
             "timeFrom": null,
             "timeShift": null,
-            "title": "$node Disk Usage",
+            "title": "$node硬盘使用",
             "tooltip": {
               "shared": true,
               "value_type": "cumulative"
@@ -1037,7 +1037,7 @@
           }
         ],
         "showTitle": true,
-        "title": "Individual Node Disk Usage"
+        "title": "单个节点硬盘使用"
       }
     ],
     "nav": [
@@ -1085,7 +1085,7 @@
           },
           "datasource": null,
           "includeAll": true,
-          "label": "Node",
+          "label": "节点",
           "multi": false,
           "multiFormat": "glob",
           "name": "node",
