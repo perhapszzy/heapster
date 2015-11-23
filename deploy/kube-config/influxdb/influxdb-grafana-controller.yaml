@@ -21,7 +21,7 @@ spec:
         - mountPath: /data
           name: influxdb-storage
       - name: grafana
-        image: caicloud/heapster_grafana:test11
+        image: caicloud/monitoring-grafana:2015-11-20-22-26-02
         env:
           - name: INFLUXDB_SERVICE_URL
             value: http://monitoring-influxdb:8086
