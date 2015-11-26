@@ -16,5 +16,5 @@ spec:
     spec:
       containers:
       - name: monitoring
-        image: caicloud/monitoring:2015-11-20-22-26-02
+        image: caicloud/monitoring:2015-11-26-23-20-21
         imagePullPolicy: Always
